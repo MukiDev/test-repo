@@ -1,11 +1,10 @@
 # DATA DICTIONARY
-# ===============
 
 ## The data in this dataset comes from the original datasets (training and test) provided with the Human Activity Recognition Using Smartphones Dataset, Version 1.0.
 ## As requested :
-## -the training and test datasets have been merged back into a single one
-## -only the mean and standard deviation for each measurement have been extracted
-## -descriptive names have been applied to activity names and extracted variable names
+## -the training and test datasets have been merged back into a single one.
+## -only the mean and standard deviation for each measurement have been extracted.
+## -descriptive names have been applied to activity names and extracted variable names.
 ## -the final data set includes the average for the extracted variables, grouped by activity name and subject.
 
 # Variable Names
@@ -79,35 +78,35 @@
 ## 67. MeanOfFrequencyBodyBodyGyroscopeJerkMagnitudeMeanValue           
 ## 68. MeanOfFrequencyBodyBodyGyroscopeJerkMagnitudeStandardDeviation   
 
-##Terms
-##The explanation for the terms used in the variable names is the following :
-##-activityname 		: One of the six physical activities performed by the experiment subjects, as listed below under Activity Names
-##-subject				: Integer identifying one of the thirty subjects participating in the experiment
-##-MeanOf				: Mean value calculated over the variable named right after. All calculated values have been grouped by activity name and subject.
-##-Time					: Time domain signal
-##-Frequency			: Frequency domain signal
-##-BodyAcceleration		: Body acceleration captured by the accelerometer attached to each participating subject. The original acceleration signal is separated into body and gravity accelerations.
-##-GravityAcceleration	: Gravity acceleration captured by the accelerometer attached to each participating subject. The original acceleration signal is separated into body and gravity accelerations.
-##-BodyGyroscope		: Angular velocity captured by the gyroscope attached to each participating subject.
-##-MeanValue			: Mean value calculated for each signal
-##-StandardDeviation	: Standard deviation calculated for each signal
-##-Jerk					: Jerk signal, obtained by deriving in time either the body linear acceleration or the angular velocity.
-##-Magnitude			: Magnitude calculated for the three dimensional signal using the Euclidean norm.
-##-Xaxis				: Signal component in the X direction.
-##-Yaxis				: Signal component in the Y direction.
-##-Zaxis				: Signal component in the Z direction.
+# Terms
+## The explanation for the terms used in the variable names is the following :
+## -activityname 		: One of the six physical activities performed by the experiment subjects, as listed below under Activity Names
+## -subject				: Integer identifying one of the thirty subjects participating in the experiment
+## -MeanOf				: Mean value calculated over the variable named right after. All calculated values have been grouped by activity name and subject.
+## -Time					: Time domain signal
+## -Frequency			: Frequency domain signal
+## -BodyAcceleration		: Body acceleration captured by the accelerometer attached to each participating subject. The original acceleration signal is separated into body and gravity accelerations.
+## -GravityAcceleration	: Gravity acceleration captured by the accelerometer attached to each participating subject. The original acceleration signal is separated into body and gravity accelerations.
+## -BodyGyroscope		: Angular velocity captured by the gyroscope attached to each participating subject.
+## -MeanValue			: Mean value calculated for each signal
+## -StandardDeviation	: Standard deviation calculated for each signal
+## -Jerk					: Jerk signal, obtained by deriving in time either the body linear acceleration or the angular velocity.
+## -Magnitude			: Magnitude calculated for the three dimensional signal using the Euclidean norm.
+## -Xaxis				: Signal component in the X direction.
+## -Yaxis				: Signal component in the Y direction.
+## -Zaxis				: Signal component in the Z direction.
 
-##Data Tidying
-##A short description for each of the data tidying steps is included in the actual script file (run_analysis.R). A more detailed description is the following :
+# Data Tidying
+## A short description for each of the data tidying steps is included in the actual script file (run_analysis.R). A more detailed description is the following :
 
 ## 01. Loading data frames with common information : activity labels and variable names. 
-###-This information is common to the provided test and training data sets. 
-###-Uses read.table against the activity_labels.txt and features.txt files provided.
+### -This information is common to the provided test and training data sets. 
+### -Uses read.table against the activity_labels.txt and features.txt files provided.
 
 ## 02. Loading data frames with test information ( test set, test activities and test subjects )
-###-This information is unique to the provided test data set and located under the UCI HAR Dataset\test subfolder.
-###-The working directory is temporarily set to this subfolder.
-###-Uses read.table against the X_test.txt,y_test.txt and subject_test.txt files provided.
+### -This information is unique to the provided test data set and located under the UCI HAR Dataset\test subfolder.
+### -The working directory is temporarily set to this subfolder.
+### -Uses read.table against the X_test.txt,y_test.txt and subject_test.txt files provided.
 
 ## 03. Loading data frames with training information ( training set, training activities and training subjects )
 ###-This information is unique to the provided training data set and located under the UCI HAR Dataset\train subfolder.
