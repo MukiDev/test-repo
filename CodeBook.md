@@ -1,4 +1,4 @@
-#DATA DICTIONARY -  
+DATA DICTIONARY -  
 #=================
 
 ##The data in this dataset comes from the original datasets (training and test) provided with the Human Activity Recognition Using Smartphones Dataset, Version 1.0.
