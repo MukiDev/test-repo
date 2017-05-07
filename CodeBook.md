@@ -1,16 +1,15 @@
-DATA DICTIONARY -  
-#=================
+# DATA DICTIONARY
+# ===============
 
-##The data in this dataset comes from the original datasets (training and test) provided with the Human Activity Recognition Using Smartphones Dataset, Version 1.0.
-##As requested :
-##-the training and test datasets have been merged back into a single one
-##-only the mean and standard deviation for each measurement have been extracted
-##-descriptive names have been applied to activity names and extracted variable names
-##-the final data set includes the average for the extracted variables, grouped by activity name and subject.
+## The data in this dataset comes from the original datasets (training and test) provided with the Human Activity Recognition Using Smartphones Dataset, Version 1.0.
+## As requested :
+## -the training and test datasets have been merged back into a single one
+## -only the mean and standard deviation for each measurement have been extracted
+## -descriptive names have been applied to activity names and extracted variable names
+## -the final data set includes the average for the extracted variables, grouped by activity name and subject.
 
-##Variable Names
-##The variable names used in the final data set are :
-
+# Variable Names
+## The variable names used in the final data set are :
 ## 01. activityname                                               
 ## 02. subject                                                    
 ## 03. MeanOfTimeBodyAccelerationMeanValueXaxis                         
