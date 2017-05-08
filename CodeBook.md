@@ -109,73 +109,61 @@
 ### -Uses read.table against the X_test.txt,y_test.txt and subject_test.txt files provided.
 
 ## 03. Loading data frames with training information ( training set, training activities and training subjects )
-###-This information is unique to the provided training data set and located under the UCI HAR Dataset\train subfolder.
-###-The working directory is temporarily set to this subfolder.
-###-Uses read.table against the X_train.txt,y_train.txt and subject_train.txt files provided.
+### -This information is unique to the provided training data set and located under the UCI HAR Dataset\train subfolder.
+### -The working directory is temporarily set to this subfolder.
+### -Uses read.table against the X_train.txt,y_train.txt and subject_train.txt files provided.
 
 ## 04. Changing variable name in both subjects data frames
-###-From V1 to subject. 
-###-Each of these columns will be later clipped with the correspondent datasets ( test or training) and then into a single dataset.
+### -From V1 to subject. 
+### -Each of these columns will be later clipped with the correspondent datasets ( test or training) and then into a single dataset.
 
 ## 05. Changing variable name in both activities data frames
-###-From V1 to activitycode. 
-###-Each of these columns will be later clipped with the correspondent datasets ( test or training) and then into a single dataset.
-###-It will be used to merge the activity names into the final single dataset.
+### -From V1 to activitycode. 
+### -Each of these columns will be later clipped with the correspondent datasets ( test or training) and then into a single dataset.
+### -It will be used to merge the activity names into the final single dataset.
 
 ## 06. Changing variable names in activity labels data frame
-###-From V1,V2 to activitycode, activityname.
-###-These new names will allow and facilitate merging the activityname column into the final single dataset.
+### -From V1,V2 to activitycode, activityname.
+### -These new names will allow and facilitate merging the activityname column into the final single dataset.
 
 ## 07. Changing all 561 variable names, for both test and training data sets. 
-###-Names are taken from variablenames data frame ( features.txt )
-###-These new names will be used to identify the requested columns for the final dataset ( only median values and standard deviations taken over the measurements ).
-###-These names will also be enhanced to be fully descriptive.
+### -Names are taken from variablenames data frame ( features.txt )
+### -These new names will be used to identify the requested columns for the final dataset ( only median values and standard deviations taken over the measurements ).
+### -These names will also be enhanced to be fully descriptive.
 
 ## 08. Column binding subject,labels and set data frames for test and training
-###-This step clips together the subject, activity codes and measurement columns for test and training, respectively.
+### -This step clips together the subject, activity codes and measurement columns for test and training, respectively.
 
 ## 09. Row binding test and training into a new data frame (full)
-###-This step clips together the test and training rows (obtained in the previous step) into a single dataset named "full"
+### -This step clips together the test and training rows (obtained in the previous step) into a single dataset named "full"
 
 ## 10. Merging activity labels with full data frame
-###-The activity names are merged with the full dataset.
-###-Merge causes its resulting dataset to be reordered. By executing the merge after clipping columns and rows together, it does not affect the final dataset negatively.
+### -The activity names are merged with the full dataset.
+### -Merge causes its resulting dataset to be reordered. By executing the merge after clipping columns and rows together, it does not affect the final dataset negatively.
 
 ## 11. Identifying variable names containing std() and mean()
-###-This step identifies the positions of the elements containing "mean(" or "std(" within the vector of variable names. This vector comes from the data frame loaded with the features.txt file.
-###-The positions will be used to select only the required fields for the final dataset.
+### -This step identifies the positions of the elements containing "mean(" or "std(" within the vector of variable names. This vector comes from the data frame loaded with the features.txt file.
+### -The positions will be used to select only the required fields for the final dataset.
 
 ## 12. Adding 3 to each member of the index list to account for the 3 initial fields ( activitycode, activityname and subject )
-###-This step and the following two adapt the index list to the structure of the full data frame and extract the required fields only.
+### -This step and the following two adapt the index list to the structure of the full data frame and extract the required fields only.
 ## 13. Adding indexes 2 and 3 at the beginning of the index list. These correspond to the activityname and subject fields
 ## 14. Extracting only required columns ( activityname, subject and those with mean() and std() )
 
 ## 15. Changing variable names to full descriptive
-###-The gsub function is used repeatedly over the names list of the full data frame to convert abbreviations to complete words.
-###-Thus clarifying the meaning and making the variable names fully descriptive, as requested. Intermediate dashes and parenthesis are removed.
-names(full)<-gsub("Acc","Acceleration",names(full))
-names(full)<-gsub("mean","MeanValue",names(full))
-names(full)<-gsub("std","StandardDeviation",names(full))
-names(full)<-gsub("\\(","",names(full))
-names(full)<-gsub("\\)","",names(full))
-names(full)<-sub("X$","Xaxis",names(full))
-names(full)<-sub("Y$","Yaxis",names(full))
-names(full)<-sub("Z$","Zaxis",names(full))
-names(full)<-gsub("Gyro","Gyroscope",names(full))
-names(full)<-gsub("Mag","Magnitude",names(full))
-names(full)<-sub("^t","Time",names(full))
-names(full)<-sub("^f","Frequency",names(full))
-names(full)<-gsub("-","",names(full))
+### -The gsub function is used repeatedly over the names list of the full data frame to convert abbreviations to complete words.
+### -These conversions clarify the meaning and make the variable names fully descriptive, as requested. Intermediate dashes and parenthesis are removed.
 
 ## 16. Grouping by activityname and subject. Calculating mean for each variable.
-###-The dplyr package is loaded to provide the group_by and summarize functions.
-###-The full data frame is loaded into a table data frame with tbl_df, to allow for the required functions.
-###-Grouping by activity name and subject is applied, then summarizing and calculating the mean for each variable.
-###-The same variable names are used for calculated means in the result data set, but preceded each by the "MeanOf" prefix.
+### -The dplyr package is loaded to provide the group_by and summarize functions.
+### -The full data frame is loaded into a table data frame with tbl_df, to allow for the required functions.
+### -Grouping by activity name and subject is applied, then summarizing and calculating the mean for each variable.
+### -The same variable names are used for calculated means in the result data set, but preceded each by the "MeanOf" prefix.
 
 ## 17. Writing result data frame to output file (csv format)
-###-The result data frame is exported in csv format. Row names are ommited.
-write.csv(result,file="UCI_HAR_Full_Dataset_Means_Of_StdDeviations_and_MeanValues_By_Activity_and_Subject.csv",row.names=FALSE)
+### -The result data frame is exported in csv format. Row names are ommited.
+### -Dimensions are 180 rows by 68 columns.
+
 
 
 
