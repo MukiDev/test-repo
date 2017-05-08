@@ -43,9 +43,9 @@ This csv file will contain the requested single data set, with 130 rows and 68 c
 
 ## Script execution:
 The successful execution of the included script ( run_analysis.R ) only relies on 3 pre-requisites :
-1.-Extracting the necessary input files into a local UCI HAR DATASET folder, as described above.
-2.-Setting up the R work directory to such UCI HAR DATASET folder.
-3.-Installing the dplyr package.
+### 1.-Extracting the necessary input files into a local UCI HAR DATASET folder, as described above.
+### 2.-Setting up the R work directory to such UCI HAR DATASET folder.
+### 3.-Installing the dplyr package.
 If any of these 3 conditions is not satisfied before running the script, an error will occur and the process will be stopped. 
 After remediating the missing condition(s), the script can be re-run any number of times. 
 Each run will override the objects in the work environment and the output file from previous executions.
