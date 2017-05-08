@@ -1,7 +1,7 @@
-==================================================================
+******************************************************************
 # Human Activity Recognition (HAR) Using Smartphones Dataset
-# Means of Standard Deviations and of Mean Values, single data set ( training and test data ).
-==================================================================
+## Means of Standard Deviations and of Mean Values, single data set ( training and test data ).
+******************************************************************
 Data comes from experiments carried out with a group of 30 volunteers. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS,
 SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial
 angular velocity signals were captured. The obtained dataset has been randomly partitioned into two sets, 
@@ -12,12 +12,11 @@ Only the columns related to mean values or standard deviations calculated over t
 The final data set must be grouped by activity name and experiment subject (participant) and mean values must be calculated for each of these groups.
 
 
-Input files:
-============
+## Input files:
 The following are the files provided with the original HAR dataset ( https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip )
 
 *******************************************************************************************************************************
-VERY IMPORTANT : 
+## VERY IMPORTANT 
 In order to execute successfully the included script ( run_analysis.R ), the following files MUST BE PREVIOUSLY EXTRACTED locally from the
 aforementioned zip file into a local UCI HAR DATASET folder and its train or test subfolders.
 Furthermore, the script assumes the WORKING DIRECTORY in R has been set up to point to the UCI HAR DATASET folder.
@@ -37,14 +36,12 @@ Optional files ( for information only ):
 - 'README.txt' : Additional detailed information about the original Human Activity Recognition (HAR) dataset.
 - 'features_info.txt': Shows information about the variables used on the feature vector.
 
-Output file: 
-============
+## Output file: 
 The result of this data tyding project is a single csv file ( UCI_HAR_Full_Dataset_Means_Of_StdDeviations_and_MeanValues_By_Activity_and_Subject.csv),
 which will be exported to the R working directory at the last step of the run_analysis.R script.
 This csv file will contain the requested single data set, with 130 rows and 68 columns.
 
-Script execution:
-================
+## Script execution:
 The successful execution of the included script ( run_analysis.R ) only relies on 3 pre-requisites :
 1.-Extracting the necessary input files into a local UCI HAR DATASET folder, as described above.
 2.-Setting up the R work directory to such UCI HAR DATASET folder.
